@@ -1,67 +1,90 @@
 /*Basic Css*/
 
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital@1&family=Palanquin:wght@200&display=swap');
+
+:root{
+  --body-font: 'Palanquin';
+  --header-font: 'Alegreya Sans SC';
+}
+
+*::before,
+*::after{box-sizing:border-box;}
+
 body{
-  background-color: #fff;
-  color: #333;
-  font-family: Lato, sans-serif;
-  margin: 10px;
-  /*width: auto;*/
+  background-color: #ffffff;
+  color: #000000;
+  font-family: var(--body-font), sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .2rem;
+}
+
+.header{
+  font-family: var(--header-font), sans-serif;
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 2.0rem 0;
 }
 
 .main-container{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin-top: 3em;
+  margin-top: 2.0rem;
 }
 
 .todo{
-  margin-top: 4em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  max-width: 90vw;
+  display: grid;
+  margin: 2.0rem 0;
+  place-items: center;
 }
 
-#new-task{
+.todo__task{
+  font-size:1.2rem;
+  text-align:center;
   font-weight: 700;
-  border: 2px solid #ece3e3;
-  margin: 1em;
+  border: 0;
+  border-bottom: 0.2rem solid #000000;
+  margin: 2.0rem 0;
+  height: 90%;
+  width: 80%;
 }
 
-#input-error{
-  color: red;
-}
-ul li{
-  list-style-type: none;
-}
-
-#tasklist{
-  display: flex;
-  flex-direction: column;
-  text-align: justify;
-  overflow-wrap: break-word;
-  max-width: 20vw;
+.todo__tasklist{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 2.0rem 0;
+  padding: 0;
+  font-size: 1.5rem;
 }
 
-#tasklist li{
-  line-height: 1.5;
-  padding: 10px;
-  font-size: 20px;
-  border-right: 2px solid green;
-  margin: 10px;
+.todo__tasklist > * {
+  display: grid;
+  grid-gap: 1.2rem;
+  grid-auto-flow: column;
+  word-break: break-all;
+  align-items: center;
+  margin: 2.0rem .8rem;
+  padding: .5rem;
 }
 
-#tasklist li:hover, li label:hover, input[type='checkbox']{
-  background-color: #90ee90;
+.todo__tasklist > *:hover {
+  border: .1rem solid #008000;
   cursor: pointer;
 }
 
-.completed-task input:checked + label {
+.todo__delete-task {
+  border: none;
+  background-color: inherit;
+  font-size: larger;
+  text-align: end;
+}
+
+.todo__task-checkbox {
+  transform: scale(1.5);
+}
+
+.todo__task-checkbox:checked + * {
   text-decoration: line-through;
 }
 
-.completed-task input[type="checkbox"]:checked {
-  box-shadow: 0 0 0 3px green;
-  margin: 10px;
+.todo__task-checkbox:checked{
+  accent-color: #008000;
 }

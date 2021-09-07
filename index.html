@@ -1,45 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>TODO APP : ALC4.0</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="John Ugbewi">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-  </head>
-  <body>
-    <main class="main-container">
-      <header>
-        <h3> TODO APP</h3>
-        <h4>Class work on AlcMeetup 2.0, Alimosho Center, Lagos State.</h4>
-      </header>
-      <section class="todo">
-        <div class="todo-input">
-          <label><h4>What need to be Done?</h4></label><br>
-          <input id="new-task" name="new-task" type="text" placeholder="....Task to be done.... " autofocus>
-          <input type="submit" name="addButton" value="Add" disabled><br/>
-          <span id="input-error"></span>
-        </div>
-        <div>
-          <h4>Tasks</h4>
-          <ul id="tasklist">
-          </ul>
-        </div>
-        <div>
-          <ul id="running-task">
-          </ul>
-          <br>
-          <ul id="completed-tasks">
-          </ul>
-
-        </div>
-      </section>
-
-      <script src="js/main.js" type="text/javascript"></script>
-
-    </main>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>TODO APP : ALC4.0</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="John Chioma">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <main class="main-container">
+    <header class="header">
+      <h3> TODO APP</h3>
+      <h4>Class work on AlcMeetup 2.0, Alimosho Center, Lagos State.</h4>
+    </header>
+    <section class="todo">
+      <input id="task" class="todo__task" name="task" type="text" placeholder="...What need to be Done?..." autofocus>
+      <ul id="tasklist" class="todo__tasklist"></ul>
+    </section>
+    <script src="js/main.js"></script>
+  </main>
+</body>
 </html>
